@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="app">
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <div class="header-badge">v O.M.S</div>
+          <h1>Job <span>Tracker</span></h1>
+          <p class="subtitle">Your job hunt, organised.</p>
+        </div>
+        <div class="header-right">
+          <button id="theme-toggle"><span class="theme-icon">☀️</span></button>
+          <button id="add-job-btn">+ Add Application</button>
+        </div>
+      </header>
+
+      <!-- STATS -->
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-total">0</div>
+          <div class="stat-label">Total</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-applied">0</div>
+          <div class="stat-label">Applied</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-interview">0</div>
+          <div class="stat-label">Interviews</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-offer">0</div>
+          <div class="stat-label">Offers</div>
+        </div>
+      </div>
+
+      <!-- KANBAN BOARD -->
+        <div class="board">
+          <div class="column" data-status="applied">
+            <div class="col-header">
+              <span class="col-title">Applied</span>
+              <span class="col-count col-count-applied" id="count-applied">0</span>
+            </div>
+            <div class="col-cards" id="col-applied"></div>
+          </div>
+
+          <div class="column" data-status="interview">
+            <div class="col-header">
+              <span class="col-title">Interview</span>
+              <span class="col-count col-count-interview" id="count-interview">0</span>
+            </div>
+            <div class="col-cards" id="col-interview"></div>
+          </div>
+
+          <div class="column" data-status="offer">
+            <div class="col-header">
+              <span class="col-title">Offer</span>
+              <span class="col-count col-count-offer" id="count-offer">0</span>
+            </div>
+            <div class="col-cards" id="col-offer"></div>
+          </div>
+
+          <div class="column" data-status="rejected">
+            <div class="col-header">
+              <span class="col-title">Rejected</span>
+              <span class="col-count col-count-rejected" id="count-rejected">0</span>
+            </div>
+            <div class="col-cards" id="col-rejected"></div>
+          </div>
+        </div>
+        
+    <!-- JOB MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Add Application</h2>
+          <button class="modal-close" id="modal-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" id="input-company" placeholder="e.g. Capitec Bank" />
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <input type="text" id="input-role" placeholder="e.g. Frontend Developer" />
+          </div>
+          <div class="form-group">
+            <label>Work Type</label>
+            <select id="input-type">
+              <option value="remote">Remote</option>
+              <option value="hybrid">Hybrid</option>
+              <option value="onsite">On-site</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Notes</label>
+            <textarea id="input-notes" placeholder="Any notes about this application..."></textarea>
+          </div>
+          <button id="save-job-btn">Save Application</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
